@@ -2,10 +2,19 @@ package archiviojava3bit;
 
 /**
  * Classe utilizzata per l'oggetto da contenere nella collezione.
- * Contiene le varibili di istanza, il metodo costruttore, i setter/getter
+ * Contiene le variabili di istanza, il metodo costruttore, i setter/getter
  * e eventuali altri metodi
- * @author INSERISCI_NOME
+ * @author Nobile Thierry
  */
-public class X {
-    
+public class Cane {
+private String codice;
+private int quantità;
+private float costo;
+private String razza;
+private float dimensione;
+private String colore;
+
+
+
+
 }
