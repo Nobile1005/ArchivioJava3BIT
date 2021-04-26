@@ -17,4 +17,18 @@ public Archivio() {
 archivio = new ArrayList(0);
 }
 
+public void inserisci(Cane cane) {
+archivio.add(cane);
+}
+
+public Cane ricerca (String codice) {
+for(int i=0; i<archivio.size(); i++) {
+Cane cane = archivio.get(i);
+
+if(cane.getCodice()==codice) {
+return cane;
+} 
+}
+return null;
+}
 }
