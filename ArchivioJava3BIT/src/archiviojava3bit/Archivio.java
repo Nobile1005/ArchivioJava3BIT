@@ -11,22 +11,22 @@ import java.util.ArrayList;
  * @author INSERISCI_NOME
  */
 public class Archivio {
-private ArrayList<Cane> archivio;
+private ArrayList<Animale> archivio;
 
 public Archivio() {
 archivio = new ArrayList(0);
 }
 
-public void inserisci(Cane cane) {
-archivio.add(cane);
+public void inserisci(Animale animale) {
+archivio.add(animale);
 }
 
-public Cane ricerca (String codice) {
+public Animale ricerca (String codice) {
 for(int i=0; i<archivio.size(); i++) {
-Cane cane = archivio.get(i);
+Animale animale = archivio.get(i);
 
-if(cane.getCodice()==codice) {
-return cane;
+if(animale.getCodice()==codice) {
+return animale;
 } 
 }
 return null;
