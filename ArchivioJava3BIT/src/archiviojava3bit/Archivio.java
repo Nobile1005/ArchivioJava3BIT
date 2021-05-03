@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Ci permette di inserire gli oggetti,
  * effettuare ricerche e
  * aggiungere/rimuovere/modificare un oggetto.
- * @author INSERISCI_NOME
+ * @author Nobile Thierry
  */
 public class Archivio {
 private ArrayList<Animale> archivio;
@@ -31,4 +31,20 @@ return animale;
 }
 return null;
 }
+
+public boolean elimina(String codice) {
+Animale animale;
+animale = ricerca(codice);
+
+if (animale != null) {
+archivio.remove(animale);
+return true;
+}
+return false;
+}
+
+/*public ArrayList<Animale> cerca(float prezzoMinimo, float prezzoMassimo){
+Arraylist<Animale> animal   
+}*/
+
 }
