@@ -17,11 +17,11 @@ public Archivio() {
 archivio = new ArrayList(0);
 }
 
-public void inserisci(Animale animale) {
+public void inserisciAnimale(Animale animale) {
 archivio.add(animale);
 }
 
-public Animale ricerca (String codice) {
+public Animale cercaAnimale(String codice) {
 for(int i=0; i<archivio.size(); i++) {
 Animale animale = archivio.get(i);
 
@@ -32,9 +32,9 @@ return animale;
 return null;
 }
 
-public boolean elimina(String codice) {
+public boolean eliminaAnimale(String codice) {
 Animale animale;
-animale = ricerca(codice);
+animale = cercaAnimale(codice);
 
 if (animale != null) {
 archivio.remove(animale);
@@ -43,8 +43,49 @@ return true;
 return false;
 }
 
-/*public ArrayList<Animale> cerca(float prezzoMinimo, float prezzoMassimo){
-Arraylist<Animale> animal   
-}*/
+public ArrayList<Animale> cercaAnimali(float prezzoMinimo, float prezzoMassimo){
+ArrayList<Animale> animaliTrovati = new ArrayList(0);
 
+for(int i=0; i<archivio.size(); i++) {
+Animale animale = archivio.get(i);
+
+if(animale.getPrezzo()>=prezzoMinimo && animale.getPrezzo()<=prezzoMassimo) {
+animaliTrovati.add(animale);
+
+}
+}
+return animaliTrovati;
+}
+
+public ArrayList<Animale> cercaAnimaliPerRazza(String razza) {
+ArrayList<Animale> animaliTrovati = new ArrayList(0);
+String razzaDaCercareMinuscolo = razza.toLowerCase();
+
+for(int i=0; i<archivio.size(); i++){
+Animale animale = archivio.get(i);
+String razzaMinuscolo = animale.getRazza().toLowerCase();
+if (razzaMinuscolo.contains(razzaDaCercareMinuscolo)) {
+animaliTrovati.add(animale);
+
+}
+}
+return animaliTrovati;
+}
+public String toString() {
+String s="";
+
+for(int i=0; i<archivio.size(); i++) {
+Animale animale = archivio.get(i);
+s += animale.toString();
+
+if(i<archivio.size()-1) {
+s += "\r\n";
+}
+}
+return s;
+}
+
+public ArrayList<Animale> elencoAnimali() {
+return archivio;
+}
 }
